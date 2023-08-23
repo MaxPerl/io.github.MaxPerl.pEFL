@@ -1,0 +1,8 @@
+--- efl-1.26.3/dbus-services/meson.build	2023-08-21 12:36:53.049172510 +0200
++++ efl-1.26.3/dbus-services/meson.build	2023-08-21 12:23:44.000000000 +0200
+@@ -15,4 +15,4 @@
+   input: 'org.enlightenment.Ethumb.service.in',
+   output: 'org.enlightenment.Ethumb.service',
+   configuration: org_enlightenment_ethumb_service_config,
+-  install_dir: dep.get_pkgconfig_variable('session_bus_services_dir'))
++  install_dir: '/app/usr/share/dbus-1/services')

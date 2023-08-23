@@ -1,0 +1,13 @@
+--- pEFL/Makefile.PL	2022-11-15 07:59:22.000000000 +0100
+--- pEFL/Makefile.PL	2022-11-15 07:59:22.000000000 +0100
+@@ -16,8 +16,8 @@
+ 	LICENSE 	   => 'perl',
+ 	#Value must be from legacy list of licenses here
+ 	#http://search.cpan.org/perldoc?Module%3A%3ABuild%3A%3AAPI
+-	LIBS		  => $elm_pkg_info{'libs'} . $evas_pkg_info{'libs'},
+-	INC 		  => '-I. ' . $elm_pkg_info{'cflags'} . $evas_pkg_info{'cflags'}, # e.g., '-I. -I/usr/include/other'
++	LIBS		  => [$elm_pkg_info{'libs'}, $evas_pkg_info{'libs'}],
++	INC 		  => '-I. ' . $elm_pkg_info{'cflags'} . " " . $evas_pkg_info{'cflags'}, # e.g., '-I. -I/usr/include/other'
+ 	DEFINE			  => '', # e.g., '-DHAVE_SOMETHING'
+ 	XSBUILD => {
+ 	all => {
