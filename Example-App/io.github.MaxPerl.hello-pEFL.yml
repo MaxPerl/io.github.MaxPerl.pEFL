@@ -1,0 +1,19 @@
+app-id: io.github.MaxPerl.hello-pEFL
+runtime: org.gnome.Platform
+runtime-version: '43'
+sdk: org.gnome.Sdk
+base: io.github.MaxPerl.pEFL
+command: hello-world.pl
+modules:
+  - name: hello
+    buildsystem: simple
+    build-commands:
+      - install -D hello-world.pl /app/bin/hello-world.pl
+    sources:
+      - type: file
+        path: hello-world.pl
+finish-args:
+  - --share=ipc
+  - --socket=x11
+  - --socket=pulseaudio
+  - --share=network
